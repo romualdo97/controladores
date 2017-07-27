@@ -10,11 +10,28 @@
  *       c if sel == 10
  *       d if sel == 11
  */
-
 CHIP Mux4Way16 {
     IN a[16], b[16], c[16], d[16], sel[2];
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    Not(in=sel[1], out=Nots1);
+    Not(in=sel[0], out=Nots0);
+
+    // checking for a selection
+    And3Way16(a=a, b=Nots1, c=Nots0, out=aValue);
+
+    // checking for b selection
+    And3Way16(a=b, b=Nots1, c=sel[0], out=bValue);
+
+    // checking for c selection
+    And3Way16(a=c, b=sel[1], c=Nots0, out=cValue);
+
+    // checking for d selection
+    And3Way16(a=d, b=sel[1], c=sel[0], out=dValue);
+
+    // output
+    Or16(a=aValue, b=bValue, out=aOrb);
+    Or16(a=cValue, b=dValue, out=cOrd);
+    Or16(a=aOrb, b=cOrd, out=out);
 }

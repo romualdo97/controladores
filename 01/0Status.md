@@ -7,4 +7,4 @@ Not16(a[16], b[16], out[16]);
 And16(a[16], b[16], out[16]);
 Or16(a[16], b[16], out[16]);
 Mux16(a[16], b[16], out[16]);
-Or8Way
+Or8Way(in[8], out);

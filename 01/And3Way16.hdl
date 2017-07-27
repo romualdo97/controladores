@@ -1,0 +1,69 @@
+CHIP And3Way16 {
+    IN a[16], b, c;
+    OUT out[16];
+
+    PARTS:
+    // compare bit 0 from 'a' bus to bits 'b' and 'c'
+    And(a=a[0], b=b, out=a0Andb);
+    And(a=a0Andb, b=c, out=out[0]);
+
+    // compare bit 1 from 'a' bus to bits 'b' and 'c'
+    And(a=a[1], b=b, out=a1Andb);
+    And(a=a1Andb, b=c, out=out[1]);
+
+    // compare bit 2 from 'a' bus to bits 'b' and 'c'
+    And(a=a[2], b=b, out=a2Andb);
+    And(a=a2Andb, b=c, out=out[2]);
+
+    // compare bit 3 from 'a' bus to bits 'b' and 'c'
+    And(a=a[3], b=b, out=a3Andb);
+    And(a=a3Andb, b=c, out=out[3]);
+
+    // compare bit 4 from 'a' bus to bits 'b' and 'c'
+    And(a=a[4], b=b, out=a4Andb);
+    And(a=a4Andb, b=c, out=out[4]);
+
+    // compare bit 5 from 'a' bus to bits 'b' and 'c'
+    And(a=a[5], b=b, out=a5Andb);
+    And(a=a5Andb, b=c, out=out[5]);
+
+    // compare bit 6 from 'a' bus to bits 'b' and 'c'
+    And(a=a[6], b=b, out=a6Andb);
+    And(a=a6Andb, b=c, out=out[6]);
+
+    // compare bit 7 from 'a' bus to bits 'b' and 'c'
+    And(a=a[7], b=b, out=a7Andb);
+    And(a=a7Andb, b=c, out=out[7]);
+
+    // compare bit 8 from 'a' bus to bits 'b' and 'c'
+    And(a=a[8], b=b, out=a8Andb);
+    And(a=a8Andb, b=c, out=out[8]);
+
+    // compare bit 9 from 'a' bus to bits 'b' and 'c'
+    And(a=a[9], b=b, out=a9Andb);
+    And(a=a9Andb, b=c, out=out[9]);
+
+    // compare bit 10 from 'a' bus to bits 'b' and 'c'
+    And(a=a[10], b=b, out=a10Andb);
+    And(a=a10Andb, b=c, out=out[10]);
+
+    // compare bit 11 from 'a' bus to bits 'b' and 'c'
+    And(a=a[11], b=b, out=a11Andb);
+    And(a=a11Andb, b=c, out=out[11]);
+
+    // compare bit 12 from 'a' bus to bits 'b' and 'c'
+    And(a=a[12], b=b, out=a12Andb);
+    And(a=a12Andb, b=c, out=out[12]);
+
+    // compare bit 13 from 'a' bus to bits 'b' and 'c'
+    And(a=a[13], b=b, out=a13Andb);
+    And(a=a13Andb, b=c, out=out[13]);
+
+    // compare bit 14 from 'a' bus to bits 'b' and 'c'
+    And(a=a[14], b=b, out=a14Andb);
+    And(a=a14Andb, b=c, out=out[14]);
+    
+    // compare bit 15 from 'a' bus to bits 'b' and 'c'
+    And(a=a[15], b=b, out=a15Andb);
+    And(a=a15Andb, b=c, out=out[15]);
+}
