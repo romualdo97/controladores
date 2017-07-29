@@ -1,13 +1,14 @@
 
 > ### **PROJECT 01 |** BOLEAN LOGIC
 > Se garantiza qué este proyecto
-
+>
 > - Cumple el código de honor.
 > - Cumple en su totalidad el listado de conceptos.
 > - Explica cada uno de los circuitos.
 > - Tiene el diagrama de compuertas de cada circuito.
 > - Explica el código de cada circuito
-> - Diligenció la auto-evaluación.
+> - Diligenció la [auto-evaluación](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/Autoevaluacion.xlsx).
+> - Reporta el [tiempo de dedicación](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/project_report.pdf).
 
 LISTADO DE CONCEPTOS
 ===================
@@ -182,3 +183,10 @@ El ***de-multiplexor*** de ocho canales recibe una *única entrada* y retransmit
 ![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/bbaa1f1c/01/report_src/imgs/dmux8way_gate.png)
 
 > En la imagen el *bus de entrada* está siendo retransmitido solo al canal más superior y a ningún otro dado que la configuración de los selectores es **000**.
+
+Reporte del tiempo
+===================
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/imgs/time_report.png)
+
+Vea el reporte completo en el siguiente [link](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/project_report.pdf).
