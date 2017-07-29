@@ -15,6 +15,8 @@ CHIP Mux4Way16 {
     OUT out[16];
 
     PARTS:
+    // PROCESS:
+    // Negamos los dos bits de entrada
     Not(in=sel[1], out=Nots1);
     Not(in=sel[0], out=Nots0);
 
@@ -30,8 +32,9 @@ CHIP Mux4Way16 {
     // checking for d selection
     And3Way16(a=d, b=sel[1], c=sel[0], out=dValue);
 
-    // output
-    Or16(a=aValue, b=bValue, out=aOrb);
+    // OUTPUT:
+    // Calculamor un Or4Way que recibe como entrada
+    // las anteriores computaciones logicas
     Or16(a=cValue, b=dValue, out=cOrd);
     Or16(a=aOrb, b=cOrd, out=out);
 }

@@ -14,7 +14,17 @@ CHIP DMux {
     OUT a, b;
 
     PARTS:
+    // PROCESS:
+    // Negamos el selector
     Not(in=sel, out=onotsel);
+
+    // OUTPUT:
+    // Aplicamos operación And entre
+    // 'in' y '¬sel' para enviar resultado
+    // al canal 'a'
     And(a=in, b=onotsel, out=a);
+    // Aplicamos operación And entre
+    // 'in' y 'sel' para enviar resultado
+    // al canal 'b'
     And(a=in, b=sel, out=b);
 }

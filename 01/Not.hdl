@@ -13,5 +13,8 @@ CHIP Not {
     OUT out;
 
     PARTS:
+    // OUTPUT:
+    // hacemos que las dos entradas del 'Nand' sea
+    // el bit de entrada 'in' de la compuerta Not
     Nand(a=in, b=in, out=out);
 }

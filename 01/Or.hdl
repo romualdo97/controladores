@@ -14,7 +14,13 @@ CHIP Or {
     OUT out;
 
     PARTS:
-    Nand(a=a, b=a, out=firstnand);
-    Nand(a=b, b=b, out=secondnand);
+    // PROCESS:
+    // Negamos los dos bits de entrada    
+    Not(in=a, out=firstnand);
+    Not(in=b, out=secondnand);
+
+    // OUTPUT:
+    // Aplicamos una operación Nand a la negación de
+    // 'a' y 'b'
     Nand(a=firstnand, b=secondnand, out=out);
 }

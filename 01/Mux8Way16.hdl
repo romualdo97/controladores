@@ -5,6 +5,8 @@ CHIP Mux8Way16 {
     OUT out[16];
 
     PARTS:
+    // PROCESS:
+    // Negamos los tres bits de entrada
     Not(in=sel[2], out=Nots2);
     Not(in=sel[1], out=Nots1);
     Not(in=sel[0], out=Nots0);
@@ -33,7 +35,9 @@ CHIP Mux8Way16 {
     // checking for h selection 111
     And4Way16(a=h, b=sel[2], c=sel[1], d=sel[0], out=hValue);
 
-    // output
+    // OUTPUT:
+    // Calculamor un Or8Way que recibe como entrada
+    // las anteriores computaciones logicas
     Or16(a=aValue, b=bValue, out=aOrb);
     Or16(a=cValue, b=dValue, out=cOrd);
     Or16(a=aOrb, b=cOrd, out=acOrbd);

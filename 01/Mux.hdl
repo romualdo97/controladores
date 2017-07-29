@@ -14,8 +14,17 @@ CHIP Mux {
     OUT out;
 
     PARTS:
+    // PROCESS:
+    // Negamos el selector
     Not(in=sel, out=onotsel);
+
+    // aplicamos 'a && ¬sel'
     And(a=a, b=onotsel, out=oaandnotsel);
+    // aplicamos 'b && sel'
     And(a=b, b=sel, out=obandsel);
+
+    // OUTPUT:
+    // Aplicamos operación Or entre
+    // 'a && ¬sel' y 'b && sel'
     Or(a=oaandnotsel, b=obandsel, out=out);
 }

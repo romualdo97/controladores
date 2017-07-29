@@ -12,10 +12,19 @@ CHIP Xor {
     IN a, b;
     OUT out;
 
-    PARTS:
+    PARTS:    
+    // PROCESS:
+    // Negamos los dos bits de entrada
     Not(in=a, out=onota);
     Not(in=b, out=onotb);
+
+    // Aplicamos operación And entre '¬a' y 'b'
     And(a=onota, b=b, out=obandnota);
+    // Aplicamos operación And entre 'a' y '¬b'
     And(a=a, b=onotb, out=oaandnotb);
+
+    // OUTPUT:
+    // Aplicamos operación Or entre
+    // '¬a && b' y 'a && ¬b'
     Or(a=obandnota, b=oaandnotb, out=out);
 }

@@ -16,9 +16,14 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:    
+    // PROCESS:
+    // Negamos los dos bits selectores
     Not(in=sel[1], out=Nots1);
     Not(in=sel[0], out=Nots0);
 
+    // OUTPUT:
+    // Calculamos la salida de cada bus
+    
     // a component 00
     And(a=Nots1, b=Nots0, out=aAnd);
     And(a=in, b=aAnd, out=a);
