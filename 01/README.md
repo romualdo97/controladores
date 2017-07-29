@@ -1,3 +1,14 @@
+
+> ### **PROJECT 01 |** BOLEAN LOGIC
+> Se garantiza qué este proyecto
+
+> - Cumple el código de honor.
+> - Cumple en su totalidad el listado de conceptos.
+> - Explica cada uno de los circuitos.
+> - Tiene el diagrama de compuertas de cada circuito.
+> - Explica el código de cada circuito
+> - Diligenció la auto-evaluación.
+
 LISTADO DE CONCEPTOS
 ===================
 
@@ -66,7 +77,7 @@ CHIP Foo {
 	Foo(in[2..4]=v, in[6..7]=true, out[0..3]=x, out[2..6]=7);
 //...
 ```
-###**Respuesta**
+### **Respuesta**
 ```
 in[8] = [0, 0, 1, 0, 0, 0, 1, 1]
 x[4] = [out[0], out[1], out[2], out[3]]
@@ -124,7 +135,7 @@ El ***de-multiplexor*** de dos canales recibe una única entrada y retransmite s
 
 > Como el selector es 1 la función ***dmux*** envía un 1 desde el canal ***B***.
 
-##NOT16
+## NOT16
 
 Devuelve *16 bits* que representan la ***negación bit a bit*** del **bus** de entrada de *16 bits*.
 
