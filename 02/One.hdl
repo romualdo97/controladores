@@ -1,0 +1,20 @@
+CHIP One {
+	OUT out[16];
+	PARTS:
+	Not(in=false, out=out[0]);
+	Not(in=false, out=out[1]);
+	Not(in=false, out=out[2]);
+	Not(in=false, out=out[3]);
+	Not(in=false, out=out[4]);
+	Not(in=false, out=out[5]);
+	Not(in=false, out=out[6]);
+	Not(in=false, out=out[7]);
+	Not(in=false, out=out[8]);
+	Not(in=false, out=out[9]);
+	Not(in=false, out=out[10]);
+	Not(in=false, out=out[11]);
+	Not(in=false, out=out[12]);
+	Not(in=false, out=out[13]);
+	Not(in=false, out=out[14]);
+	Not(in=false, out=out[15]);
+}
