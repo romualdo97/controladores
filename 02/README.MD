@@ -28,4 +28,4 @@ x	zx	nx   | out
 
 f(x, zx, nx) = !x * !zx * nx + !x * zx * nx + x * !zx * !nx + x * zx * !nx
 			 = !x * nx (!zx + zx) + x * !nx (!zx + zx)
-			 = !x * nx (!zx + zx) + x * !nx (!zx + zx)
+			 = !x * nx + x * !nx
