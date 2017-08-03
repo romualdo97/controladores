@@ -86,10 +86,14 @@ CHIP ALU {
     Not16(in=fo, out=NOTfo);
 
     // if no then negate fo
-    Mux16(a=fo, b=NOTfo, sel=no, out=o, out=out);
+    Mux16(a=fo, b=NOTfo, sel=no, out[0..7]=lownoo, out[8..15]=highnoo, out[15]=ng, out=out);
 
     // ======================================================
 
     // if out=0 then zr = 1 else zr = 0
-    Equal16(a=o, b[0..15]=false, out=zr);
+    Or8Way(in=lownoo, out=lowzro);
+    Or8Way(in=highnoo, out=highzro);
+    Or(a=lowzro, b=highzro, out=zro);
+    Not(in=zro, out=zr);
+
 }
