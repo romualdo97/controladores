@@ -2050,7 +2050,7 @@
 <GID>182</GID>
 <name>OUT</name></connection></hsegment></shape></wire></page 1>
 <page 2>
-<PageViewport>164.248,-0.579448,287.638,-62.7172</PageViewport>
+<PageViewport>172.568,-23.7705,295.958,-85.9082</PageViewport>
 <gate>
 <ID>193</ID>
 <type>AA_TOGGLE</type>
@@ -2445,7 +2445,7 @@
 <gate>
 <ID>233</ID>
 <type>FF_GND</type>
-<position>217,-69</position>
+<position>219.5,-69</position>
 <output>
 <ID>OUT_0</ID>21 </output>
 <gparam>angle 0.0</gparam>
@@ -2576,18 +2576,18 @@
 <shape>
 <vsegment>
 <ID>0</ID>
-<points>217,-68,217,-60</points>
+<points>219.5,-68,219.5,-60</points>
 <connection>
 <GID>233</GID>
 <name>OUT_0</name></connection>
 <intersection>-60 1</intersection></vsegment>
 <hsegment>
 <ID>1</ID>
-<points>217,-60,226,-60</points>
+<points>219.5,-60,226,-60</points>
 <connection>
 <GID>3</GID>
 <name>IN_1</name></connection>
-<intersection>217 0</intersection></hsegment></shape></wire>
+<intersection>219.5 0</intersection></hsegment></shape></wire>
 <wire>
 <ID>136</ID>
 <shape>
