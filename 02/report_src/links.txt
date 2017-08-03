@@ -1,3 +1,6 @@
+Guia:
+https://docs.google.com/presentation/d/1NNsaqSGkcBvjRQ_YJW_J39JAVT_gWkicRpwnMJlFMwA/edit
+
 Magnitude comparator docs
 https://es.wikipedia.org/wiki/Circuito_comparador
 
