@@ -1,0 +1,4 @@
+Magnitude comparator docs
+https://es.wikipedia.org/wiki/Circuito_comparador
+
+http://www.electronics-tutorials.ws/combination/comb_8.html

@@ -3226,7 +3226,148 @@
 <GID>247</GID>
 <name>OUT_0</name></connection></hsegment></shape></wire></page 2>
 <page 3>
-<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 3>
+<PageViewport>-5.90755,32.5951,98.4225,-19.9442</PageViewport>
+<gate>
+<ID>249</ID>
+<type>AA_TOGGLE</type>
+<position>22.5,11</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>251</ID>
+<type>AA_TOGGLE</type>
+<position>22.5,8</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>253</ID>
+<type>AA_TOGGLE</type>
+<position>22,5</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>255</ID>
+<type>AA_TOGGLE</type>
+<position>22.5,2</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>257</ID>
+<type>AA_LABEL</type>
+<position>24,15</position>
+<gparam>LABEL_TEXT A bus</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>258</ID>
+<type>AA_TOGGLE</type>
+<position>22,-5.5</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>259</ID>
+<type>AA_TOGGLE</type>
+<position>22,-8.5</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>260</ID>
+<type>AA_TOGGLE</type>
+<position>21.5,-11.5</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>261</ID>
+<type>AA_TOGGLE</type>
+<position>22,-14.5</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>262</ID>
+<type>AA_LABEL</type>
+<position>23.5,-1.5</position>
+<gparam>LABEL_TEXT B bus</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>264</ID>
+<type>AA_LABEL</type>
+<position>17.5,11.5</position>
+<gparam>LABEL_TEXT 0</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>265</ID>
+<type>AA_LABEL</type>
+<position>17.5,8</position>
+<gparam>LABEL_TEXT 1</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>266</ID>
+<type>AA_LABEL</type>
+<position>17.5,5</position>
+<gparam>LABEL_TEXT 2</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>267</ID>
+<type>AA_LABEL</type>
+<position>17.5,2</position>
+<gparam>LABEL_TEXT 3</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>268</ID>
+<type>AA_LABEL</type>
+<position>17.5,-5</position>
+<gparam>LABEL_TEXT 0</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>269</ID>
+<type>AA_LABEL</type>
+<position>17.5,-8.5</position>
+<gparam>LABEL_TEXT 1</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>270</ID>
+<type>AA_LABEL</type>
+<position>17.5,-11.5</position>
+<gparam>LABEL_TEXT 2</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>271</ID>
+<type>AA_LABEL</type>
+<position>17.5,-14.5</position>
+<gparam>LABEL_TEXT 3</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>272</ID>
+<type>AA_LABEL</type>
+<position>23.5,24.5</position>
+<gparam>LABEL_TEXT out</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate></page 3>
 <page 4>
 <PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 4>
 <page 5>
