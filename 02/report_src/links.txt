@@ -4,6 +4,9 @@ https://docs.google.com/presentation/d/1NNsaqSGkcBvjRQ_YJW_J39JAVT_gWkicRpwnMJlF
 lista de chequeo:
 https://docs.google.com/spreadsheets/d/1OSXmc0xEHslQvoY4NpS7wEOapMiuluUbwkXZXJkb2iA/edit#gid=0
 
+latex editors:
+https://www.codecogs.com/latex/eqneditor.php
+
 Magnitude comparator docs
 https://es.wikipedia.org/wiki/Circuito_comparador
 
