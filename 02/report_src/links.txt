@@ -1,6 +1,9 @@
 Guia:
 https://docs.google.com/presentation/d/1NNsaqSGkcBvjRQ_YJW_J39JAVT_gWkicRpwnMJlFMwA/edit
 
+lista de chequeo:
+https://docs.google.com/spreadsheets/d/1OSXmc0xEHslQvoY4NpS7wEOapMiuluUbwkXZXJkb2iA/edit#gid=0
+
 Magnitude comparator docs
 https://es.wikipedia.org/wiki/Circuito_comparador
 
