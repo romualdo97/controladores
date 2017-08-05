@@ -8,10 +8,12 @@
  * out = in + 1 (arithmetic addition)
  */
 // 4 bit magnitude camparator
-CHIP MagCmp4 {
-    IN a[4], b[4];
-    OUT out[3];
+
+CHIP Inc16 {
+    IN in[16];
+    OUT out[16];
 
     PARTS:
-    
+    // add one to the incoming number
+    Add16(a=in, b[0]=true, b[1..15]=false, out=out);
 }
