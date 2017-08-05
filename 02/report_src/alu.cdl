@@ -2060,7 +2060,7 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 0</lparam></gate>
+<lparam>OUTPUT_NUM 1</lparam></gate>
 <gate>
 <ID>194</ID>
 <type>AA_LABEL</type>
@@ -2481,7 +2481,7 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 1</lparam></gate>
+<lparam>OUTPUT_NUM 0</lparam></gate>
 <gate>
 <ID>188</ID>
 <type>AA_TOGGLE</type>
@@ -2521,7 +2521,7 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 1</lparam></gate>
+<lparam>OUTPUT_NUM 0</lparam></gate>
 <gate>
 <ID>192</ID>
 <type>AA_TOGGLE</type>
@@ -2848,31 +2848,31 @@
 <shape>
 <vsegment>
 <ID>0</ID>
-<points>155,-60,155,-28.5</points>
+<points>151,-60,151,-28.5</points>
 <intersection>-60 3</intersection>
 <intersection>-43 1</intersection>
 <intersection>-28.5 4</intersection></vsegment>
 <hsegment>
 <ID>1</ID>
-<points>155,-43,164,-43</points>
+<points>151,-43,164,-43</points>
 <connection>
 <GID>206</GID>
 <name>IN_0</name></connection>
-<intersection>155 0</intersection></hsegment>
+<intersection>151 0</intersection></hsegment>
 <hsegment>
 <ID>3</ID>
-<points>155,-60,165,-60</points>
+<points>151,-60,165,-60</points>
 <connection>
 <GID>209</GID>
 <name>IN_0</name></connection>
-<intersection>155 0</intersection></hsegment>
+<intersection>151 0</intersection></hsegment>
 <hsegment>
 <ID>4</ID>
-<points>146,-28.5,155,-28.5</points>
+<points>146,-28.5,151,-28.5</points>
 <connection>
 <GID>226</GID>
 <name>N_in1</name></connection>
-<intersection>155 0</intersection></hsegment></shape></wire>
+<intersection>151 0</intersection></hsegment></shape></wire>
 <wire>
 <ID>152</ID>
 <shape>
