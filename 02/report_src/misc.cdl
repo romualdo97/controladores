@@ -268,6 +268,13 @@
 <gparam>LABEL_TEXT Sum</gparam>
 <gparam>TEXT_HEIGHT 2</gparam>
 <gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>131</ID>
+<type>AA_LABEL</type>
+<position>110,-10.5</position>
+<gparam>LABEL_TEXT FULL-ADDER</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
 <wire>
 <ID>1</ID>
 <shape>

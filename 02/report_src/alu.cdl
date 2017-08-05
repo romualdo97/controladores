@@ -1,7 +1,7 @@
 <circuit>
 <CurrentPage>0</CurrentPage>
 <page 0>
-<PageViewport>-31.063,76.6229,652.896,-267.81</PageViewport>
+<PageViewport>273.875,108.298,1058,-286.577</PageViewport>
 <gate>
 <ID>2</ID>
 <type>AA_INVERTER</type>
@@ -1111,7 +1111,7 @@
 <name>IN_0</name></connection>
 <intersection>104.5 0</intersection></hsegment></shape></wire></page 0>
 <page 1>
-<PageViewport>116.039,-2.76362,532.482,-212.479</PageViewport>
+<PageViewport>116.039,110.022,1429.44,-551.388</PageViewport>
 <gate>
 <ID>90</ID>
 <type>AA_LABEL</type>
@@ -2050,7 +2050,7 @@
 <GID>182</GID>
 <name>OUT</name></connection></hsegment></shape></wire></page 1>
 <page 2>
-<PageViewport>172.568,-23.7705,295.958,-85.9082</PageViewport>
+<PageViewport>73.2645,-2.05139,237.438,-84.7272</PageViewport>
 <gate>
 <ID>193</ID>
 <type>AA_TOGGLE</type>
@@ -2077,11 +2077,18 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 1</lparam></gate>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>196</ID>
+<type>AA_LABEL</type>
+<position>107,-7.5</position>
+<gparam>LABEL_TEXT zx</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
 <gate>
 <ID>3</ID>
 <type>AE_OR2</type>
-<position>229,-59</position>
+<position>237,-59</position>
 <input>
 <ID>IN_0</ID>3 </input>
 <input>
@@ -2090,13 +2097,6 @@
 <ID>OUT</ID>7 </output>
 <gparam>angle 0.0</gparam>
 <lparam>INPUT_BITS 2</lparam></gate>
-<gate>
-<ID>196</ID>
-<type>AA_LABEL</type>
-<position>107,-7.5</position>
-<gparam>LABEL_TEXT zx</gparam>
-<gparam>TEXT_HEIGHT 2</gparam>
-<gparam>angle 0.0</gparam></gate>
 <gate>
 <ID>197</ID>
 <type>AA_LABEL</type>
@@ -2193,6 +2193,13 @@
 <gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam></gate>
 <gate>
+<ID>16</ID>
+<type>AA_LABEL</type>
+<position>224.5,-52</position>
+<gparam>LABEL_TEXT OUT</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
 <ID>209</ID>
 <type>AA_AND2</type>
 <position>168,-61</position>
@@ -2243,16 +2250,6 @@
 <gparam>angle 0.0</gparam>
 <lparam>INPUT_BITS 2</lparam></gate>
 <gate>
-<ID>21</ID>
-<type>AA_INVERTER</type>
-<position>238,-59</position>
-<input>
-<ID>IN_0</ID>7 </input>
-<output>
-<ID>OUT_0</ID>13 </output>
-<gparam>angle 0.0</gparam>
-<lparam>INPUT_BITS 1</lparam></gate>
-<gate>
 <ID>214</ID>
 <type>AA_MUX_2x1</type>
 <position>207.5,-52.5</position>
@@ -2266,6 +2263,16 @@
 <ID>SEL_0</ID>140 </input>
 <gparam>angle 0.0</gparam>
 <lparam>INPUT_BITS 2</lparam></gate>
+<gate>
+<ID>21</ID>
+<type>AA_INVERTER</type>
+<position>246,-59</position>
+<input>
+<ID>IN_0</ID>7 </input>
+<output>
+<ID>OUT_0</ID>13 </output>
+<gparam>angle 0.0</gparam>
+<lparam>INPUT_BITS 1</lparam></gate>
 <gate>
 <ID>215</ID>
 <type>GA_LED</type>
@@ -2324,14 +2331,6 @@
 <gparam>angle 0.0</gparam>
 <lparam>INPUT_BITS 2</lparam></gate>
 <gate>
-<ID>27</ID>
-<type>GA_LED</type>
-<position>243.5,-59</position>
-<input>
-<ID>N_in0</ID>13 </input>
-<gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
-<gparam>angle 0.0</gparam></gate>
-<gate>
 <ID>220</ID>
 <type>FF_GND</type>
 <position>93,-61</position>
@@ -2340,6 +2339,14 @@
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
 <lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>27</ID>
+<type>GA_LED</type>
+<position>251.5,-59</position>
+<input>
+<ID>N_in0</ID>13 </input>
+<gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam></gate>
 <gate>
 <ID>221</ID>
 <type>GA_LED</type>
@@ -2438,14 +2445,14 @@
 <gate>
 <ID>231</ID>
 <type>AA_LABEL</type>
-<position>234,-64</position>
+<position>242,-64</position>
 <gparam>LABEL_TEXT if out=0 then zr = 1 else zr = 0</gparam>
 <gparam>TEXT_HEIGHT 1</gparam>
 <gparam>angle 0.0</gparam></gate>
 <gate>
 <ID>233</ID>
 <type>FF_GND</type>
-<position>219.5,-69</position>
+<position>226.5,-70</position>
 <output>
 <ID>OUT_0</ID>21 </output>
 <gparam>angle 0.0</gparam>
@@ -2484,7 +2491,7 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 0</lparam></gate>
+<lparam>OUTPUT_NUM 1</lparam></gate>
 <gate>
 <ID>189</ID>
 <type>AA_TOGGLE</type>
@@ -2494,7 +2501,7 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 1</lparam></gate>
+<lparam>OUTPUT_NUM 0</lparam></gate>
 <gate>
 <ID>190</ID>
 <type>AA_TOGGLE</type>
@@ -2504,7 +2511,7 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 0</lparam></gate>
+<lparam>OUTPUT_NUM 1</lparam></gate>
 <gate>
 <ID>191</ID>
 <type>AA_TOGGLE</type>
@@ -2524,13 +2531,13 @@
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 0</lparam></gate>
+<lparam>OUTPUT_NUM 1</lparam></gate>
 <wire>
 <ID>3</ID>
 <shape>
 <hsegment>
 <ID>1</ID>
-<points>219.5,-58,226,-58</points>
+<points>219.5,-58,234,-58</points>
 <connection>
 <GID>3</GID>
 <name>IN_0</name></connection>
@@ -2552,42 +2559,42 @@
 <shape>
 <hsegment>
 <ID>1</ID>
-<points>232,-59,235,-59</points>
-<connection>
-<GID>21</GID>
-<name>IN_0</name></connection>
+<points>240,-59,243,-59</points>
 <connection>
 <GID>3</GID>
-<name>OUT</name></connection></hsegment></shape></wire>
+<name>OUT</name></connection>
+<connection>
+<GID>21</GID>
+<name>IN_0</name></connection></hsegment></shape></wire>
 <wire>
 <ID>13</ID>
 <shape>
 <hsegment>
 <ID>1</ID>
-<points>241,-59,242.5,-59</points>
-<connection>
-<GID>27</GID>
-<name>N_in0</name></connection>
+<points>249,-59,250.5,-59</points>
 <connection>
 <GID>21</GID>
-<name>OUT_0</name></connection></hsegment></shape></wire>
+<name>OUT_0</name></connection>
+<connection>
+<GID>27</GID>
+<name>N_in0</name></connection></hsegment></shape></wire>
 <wire>
 <ID>21</ID>
 <shape>
 <vsegment>
 <ID>0</ID>
-<points>219.5,-68,219.5,-60</points>
+<points>226.5,-69,226.5,-60</points>
 <connection>
 <GID>233</GID>
 <name>OUT_0</name></connection>
 <intersection>-60 1</intersection></vsegment>
 <hsegment>
 <ID>1</ID>
-<points>219.5,-60,226,-60</points>
+<points>226.5,-60,234,-60</points>
 <connection>
 <GID>3</GID>
 <name>IN_1</name></connection>
-<intersection>219.5 0</intersection></hsegment></shape></wire>
+<intersection>226.5 0</intersection></hsegment></shape></wire>
 <wire>
 <ID>136</ID>
 <shape>
@@ -3100,7 +3107,7 @@
 <GID>229</GID>
 <name>N_in0</name></connection></hsegment></shape></wire></page 2>
 <page 3>
-<PageViewport>-5.90755,60.8509,323.133,-104.85</PageViewport>
+<PageViewport>-5.90755,149.965,1031.84,-372.629</PageViewport>
 <gate>
 <ID>249</ID>
 <type>AA_TOGGLE</type>
@@ -3243,14 +3250,14 @@
 <gparam>TEXT_HEIGHT 2</gparam>
 <gparam>angle 0.0</gparam></gate></page 3>
 <page 4>
-<PageViewport>0,156.824,1386.58,-541.438</PageViewport></page 4>
+<PageViewport>0,532.354,1394,-169.646</PageViewport></page 4>
 <page 5>
-<PageViewport>0,156.824,1386.58,-541.438</PageViewport></page 5>
+<PageViewport>0,532.354,1394,-169.646</PageViewport></page 5>
 <page 6>
-<PageViewport>0,156.824,1386.58,-541.438</PageViewport></page 6>
+<PageViewport>0,532.354,1394,-169.646</PageViewport></page 6>
 <page 7>
-<PageViewport>0,156.824,1386.58,-541.438</PageViewport></page 7>
+<PageViewport>0,532.354,1394,-169.646</PageViewport></page 7>
 <page 8>
-<PageViewport>0,156.824,1386.58,-541.438</PageViewport></page 8>
+<PageViewport>0,532.354,1394,-169.646</PageViewport></page 8>
 <page 9>
-<PageViewport>0,156.824,1386.58,-541.438</PageViewport></page 9></circuit>
+<PageViewport>0,532.354,1394,-169.646</PageViewport></page 9></circuit>
