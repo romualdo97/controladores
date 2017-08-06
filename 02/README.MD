@@ -6,8 +6,8 @@
 > - Explica cada uno de los circuitos.
 > - Tiene el diagrama de compuertas de cada circuito.
 > - Explica el código de cada circuito
-> - Diligenció la [auto-evaluación](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/Autoevaluacion.xlsx).
-> - Reporta el [tiempo de dedicación](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/project_report.pdf).
+> - Diligenció la [auto-evaluación](https://cdn.rawgit.com/romualdo97/controladores/5282adb6/02/report_src/Autoevaluacion.xlsx).
+> - Reporta el [tiempo de dedicación](https://github.com/romualdo97/controladores/blob/master/02/report_src/project_report.pdf).
 
 LISTADO DE CONCEPTOS
 ===================
