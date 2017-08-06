@@ -185,3 +185,147 @@ Las limitaciones del esquema no permiten evidenciar un funcionamiento completo d
 
 ![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/cf357c21/02/report_src/imgs/mux_funcs/o_mux_fun_x_or_y.png)
 
+---
+
+DESCIFRANDO LA ALU
+===================
+
+Demuestre cómo es posible que la ALU pueda realizar con el hardware que tenemos las siguientes operaciones: *-X, X+1, X-Y, X or Y*
+
+## DEMOSTRANDO -X
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/descifrando_alu/a_mux_fun_minus_x.png)
+
+---
+
+![enter image description here](https://latex.codecogs.com/gif.latex?-x&space;=&space;%5Csim&space;%28x&space;&plus;&space;%28-1%29%29%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7Bx-1%7D=%5Csim&space;%28x-1%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7Bx-1%7D=C_1%5E%7Bx-1%7D&space;&plus;&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7Bx-1%7D=2%5En&space;-&space;%28x-1%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7Bx-1%7D=C_2%5E%7Bx-1%7D&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7Bx-1%7D=2%5En&space;-&space;%28x-1%29&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7Bx-1%7D=2%5En&space;-x&space;&plus;1&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7Bx-1%7D=2%5En&space;-&space;x&space;=&space;C_2%5E%7Bx%7D)
+
+
+## DEMOSTRANDO X+1
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/descifrando_alu/b_mux_fun_x_plus_one.png)
+
+---
+
+![a](https://latex.codecogs.com/gif.latex?x&plus;1=%5Csim%28%5Csim&space;x&plus;%28-1%29%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x-1%7D&space;=&space;%5Csim&space;%28%5Csim&space;x&space;-&space;1%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7B%5Csim&space;x-1%7D&space;=&space;C_1%5E%7B%5Csim&space;x-1%7D&space;&plus;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7B%5Csim&space;x-1%7D&space;=&space;2%5En&space;-&space;%28%5Csim&space;x&space;-&space;1%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x-1%7D&space;=&space;C_2%5E%7B%5Csim&space;x-1%7D&space;&plus;&space;1)
+
+---
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7Bx%7D&space;=&space;%5Csim&space;x)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7Bx%7D&space;=&space;C_1%5E%7Bx%7D&space;&plus;&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7Bx%7D&space;=&space;C_2%5E%7Bx%7D&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7Bx%7D&space;=&space;2%5En-x)
+
+---
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;-&space;1%7D&space;=&space;2%5En&space;-&space;%28C_2%5E%7Bx%7D&space;-&space;1&space;-&space;1%29&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;-&space;1%7D&space;=&space;2%5En&space;-2%5En&space;&plus;&space;x&space;&plus;&space;2&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;-&space;1%7D&space;=&space;x&space;&plus;&space;1)
+
+## DEMOSTRANDO X-Y
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/descifrando_alu/c_mux_fun_x_minus_y.png)
+
+---
+
+![enter image description here](https://latex.codecogs.com/gif.latex?x-y&space;=&space;%5Csim&space;%28%5Csim&space;x&space;&plus;&space;y%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;=&space;%5Csim&space;%28%5Csim&space;x&space;&plus;&space;y%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;=&space;C_1%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;&plus;&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;=&space;2%5En&space;-&space;%28%5Csim&space;x&space;&plus;&space;y%29)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;=&space;2%5En&space;-&space;%28%5Csim&space;x&space;&plus;&space;y%29&space;-&space;1)
+
+---
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5Ex&space;=&space;%5Csim&space;x)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5Ex&space;=&space;C_1%5Ex&space;&plus;&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_2%5Ex&space;=&space;2%5En&space;-&space;x)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5Ex&space;=&space;2%5En&space;-&space;x&space;-&space;1)
+
+---
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;=&space;2%5En&space;-&space;%282%5En&space;-&space;x&space;-&space;1&space;&plus;&space;y%29&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;=&space;2%5En&space;-2%5En&space;&plus;&space;x&space;&plus;&space;1&space;-&space;y&space;-&space;1)
+
+![enter image description here](https://latex.codecogs.com/gif.latex?C_1%5E%7B%5Csim&space;x&space;&plus;&space;y%7D&space;=&space;x&space;-&space;y)
+
+## DEMOSTRANDO X OR Y
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/descifrando_alu/d_mux_fun_x_or_y.png)
+
+Se sabe por la ley de Morgan qué:
+
+    Not(A & B) = Not(A) | Not(B)
+    Not(A | B) = Not(A) & Not(B)
+
+De tal forma:
+
+    Not(x) & Not(y) = Not(x | y)
+    Not(Not(x | y)) = x | y
+
+EXPLICACIÓN DE CHIPS
+===================
+
+## HALF-ADDER
+
+Suma dos buses de *n bit*s y devuelve el resultado junto al **carry**.
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/a_half_adder.png)
+
+## FULL-ADDER
+
+Suma tres buses de *n bits* (el bus adicional se usa como ***carry in***) y devuelve el respectivo resultado junto al ***carry***.
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/b_full_adder.png)
+
+## ADDER
+
+Suma dos buses de *n bits*, de tal forma que cada bus represente un número con signo en complemento a 2. Por lo tanto la función Adder posee solo una salida que representa el resultado de la suma sin tener en cuenta el overflow.
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/c_adder.png)
+
+## INCREMENTER
+
+Suma a un bus de ***n bits*** un 1 usando representación de signos con complemento a 2.
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/d_incrementer.png)
+
+## ALU
+
+Permite realizar operaciones aritméticas y lógicas sobre dos buses de ***n bits*** dependiendo de la configuración establecida en los bits de control.
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/0166bc61/02/report_src/imgs/e_alu.png)
