@@ -12,9 +12,39 @@
  */
 
 CHIP PC {
-    IN in[16],load,inc,reset;
+    IN in[16], load, inc, reset;
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // INCREMENTATION STAGE
+
+    // if inc(t - 1) then out(t) = out(t - 1) + 1 
+    // else out(t) = out(t - 1)
+
+    // pout: previous output
+    // poi: previous output incremented
+    // iso: incrementation stage output
+    Inc16(in=pout, out=poi);
+    Mux16(a=pout, b=poi, sel=inc, out=iso);
+
+    // LOAD STAGE
+
+    // if load(t - 1) then out(t) = in(t - 1)
+    // else iso
+
+    // lso: load stage output
+    Mux16(a=iso, b=in, sel=load, out=lso); 
+
+    // RESET STAGE
+
+    // if reset(t - 1) then out(t) = 0
+    // else lso
+
+    // pout: out(t - 1)
+    // rso: reset stage output
+    Mux16(a=lso, b=false, sel=reset, out=rso);
+
+    // OUTPUT STAGE
+    Register(in=rso, load=true, out=pout, out=out);
+
 }
