@@ -1,0 +1,17 @@
+{signal: [
+  {name: 'clk', wave: 'N.....'},
+  {},
+  {name: 'load', wave: '100100'},
+  {},
+  {name: 'in[0]', wave: '100000'},
+  {name: '.'},
+  {name: '.'},
+  {name: '.'},
+  {name: 'in[15]', wave: '110100'},
+  {},
+  {name: 'out[0]', wave: '011100'},
+  {name: '.'},
+  {name: '.'},
+  {name: '.'},
+  {name: 'out[15]', wave: '011111'},
+]}

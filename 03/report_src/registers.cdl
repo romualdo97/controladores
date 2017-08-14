@@ -1,7 +1,7 @@
 <circuit>
 <CurrentPage>0</CurrentPage>
 <page 0>
-<PageViewport>-1.56875,-20.8687,57.2406,-50.4844</PageViewport>
+<PageViewport>-2.16385,-13.2909,56.5218,-42.8443</PageViewport>
 <gate>
 <ID>2</ID>
 <type>AA_LABEL</type>
@@ -10,9 +10,16 @@
 <gparam>TEXT_HEIGHT 2</gparam>
 <gparam>angle 0.0</gparam></gate>
 <gate>
+<ID>3</ID>
+<type>AA_LABEL</type>
+<position>7.5,-37.5</position>
+<gparam>LABEL_TEXT Combinational Logic</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
 <ID>4</ID>
 <type>AA_MUX_2x1</type>
-<position>19,-25</position>
+<position>12,-25</position>
 <input>
 <ID>IN_0</ID>12 </input>
 <input>
@@ -23,6 +30,13 @@
 <ID>SEL_0</ID>2 </input>
 <gparam>angle 0.0</gparam>
 <lparam>INPUT_BITS 2</lparam></gate>
+<gate>
+<ID>6</ID>
+<type>AA_LABEL</type>
+<position>30,-37.5</position>
+<gparam>LABEL_TEXT Sequential Logic</gparam>
+<gparam>TEXT_HEIGHT 1</gparam>
+<gparam>angle 0.0</gparam></gate>
 <gate>
 <ID>10</ID>
 <type>AE_DFF_LOW</type>
@@ -43,17 +57,17 @@
 <gate>
 <ID>12</ID>
 <type>AA_TOGGLE</type>
-<position>17,-19</position>
+<position>10,-19</position>
 <output>
 <ID>OUT_0</ID>2 </output>
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
 <gparam>angle 0.0</gparam>
 <lparam>OUTPUT_BITS 1</lparam>
-<lparam>OUTPUT_NUM 0</lparam></gate>
+<lparam>OUTPUT_NUM 1</lparam></gate>
 <gate>
 <ID>14</ID>
 <type>AA_TOGGLE</type>
-<position>11,-24</position>
+<position>4,-24</position>
 <output>
 <ID>OUT_0</ID>3 </output>
 <gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
@@ -63,7 +77,7 @@
 <gate>
 <ID>20</ID>
 <type>BB_CLOCK</type>
-<position>18,-36</position>
+<position>23,-33</position>
 <output>
 <ID>CLK</ID>8 </output>
 <gparam>angle 0.0</gparam>
@@ -71,7 +85,7 @@
 <gate>
 <ID>22</ID>
 <type>GA_LED</type>
-<position>41,-22</position>
+<position>47,-22</position>
 <input>
 <ID>N_in0</ID>12 </input>
 <gparam>LED_BOX -0.76,-0.76,0.76,0.76</gparam>
@@ -79,7 +93,7 @@
 <gate>
 <ID>26</ID>
 <type>AA_LABEL</type>
-<position>17,-16</position>
+<position>10,-16</position>
 <gparam>LABEL_TEXT load</gparam>
 <gparam>TEXT_HEIGHT 1</gparam>
 <gparam>angle 0.0</gparam></gate>
@@ -93,14 +107,14 @@
 <gate>
 <ID>30</ID>
 <type>AA_LABEL</type>
-<position>11,-21.5</position>
+<position>4,-21.5</position>
 <gparam>LABEL_TEXT in</gparam>
 <gparam>TEXT_HEIGHT 1</gparam>
 <gparam>angle 0.0</gparam></gate>
 <gate>
 <ID>32</ID>
 <type>AA_LABEL</type>
-<position>41,-25</position>
+<position>47,-25</position>
 <gparam>LABEL_TEXT out</gparam>
 <gparam>TEXT_HEIGHT 1</gparam>
 <gparam>angle 0.0</gparam></gate>
@@ -121,7 +135,7 @@
 <intersection>-22 1</intersection></vsegment>
 <hsegment>
 <ID>5</ID>
-<points>21,-25,24,-25</points>
+<points>14,-25,24,-25</points>
 <connection>
 <GID>4</GID>
 <name>OUT</name></connection>
@@ -131,7 +145,7 @@
 <shape>
 <vsegment>
 <ID>0</ID>
-<points>19,-22.5,19,-19</points>
+<points>12,-22.5,12,-19</points>
 <connection>
 <GID>12</GID>
 <name>OUT_0</name></connection>
@@ -143,7 +157,7 @@
 <shape>
 <hsegment>
 <ID>1</ID>
-<points>13,-24,17,-24</points>
+<points>6,-24,10,-24</points>
 <connection>
 <GID>4</GID>
 <name>IN_1</name></connection>
@@ -155,25 +169,20 @@
 <shape>
 <vsegment>
 <ID>0</ID>
-<points>27,-36,27,-25</points>
-<connection>
-<GID>10</GID>
-<name>clock</name></connection>
-<intersection>-36 6</intersection></vsegment>
-<hsegment>
-<ID>6</ID>
-<points>22,-36,27,-36</points>
+<points>27,-33,27,-25</points>
 <connection>
 <GID>20</GID>
 <name>CLK</name></connection>
-<intersection>27 0</intersection></hsegment></shape></wire>
+<connection>
+<GID>10</GID>
+<name>clock</name></connection></vsegment></shape></wire>
 <wire>
 <ID>12</ID>
 <shape>
 <hsegment>
 <ID>1</ID>
-<points>16,-29.5,36,-29.5</points>
-<intersection>16 5</intersection>
+<points>10,-29.5,36,-29.5</points>
+<intersection>10 5</intersection>
 <intersection>36 3</intersection></hsegment>
 <vsegment>
 <ID>3</ID>
@@ -182,7 +191,7 @@
 <intersection>-22 4</intersection></vsegment>
 <hsegment>
 <ID>4</ID>
-<points>33,-22,40,-22</points>
+<points>33,-22,46,-22</points>
 <connection>
 <GID>10</GID>
 <name>OUT_0</name></connection>
@@ -192,18 +201,13 @@
 <intersection>36 3</intersection></hsegment>
 <vsegment>
 <ID>5</ID>
-<points>16,-29.5,16,-26</points>
-<intersection>-29.5 1</intersection>
-<intersection>-26 6</intersection></vsegment>
-<hsegment>
-<ID>6</ID>
-<points>16,-26,17,-26</points>
+<points>10,-29.5,10,-26</points>
 <connection>
 <GID>4</GID>
 <name>IN_0</name></connection>
-<intersection>16 5</intersection></hsegment></shape></wire></page 0>
+<intersection>-29.5 1</intersection></vsegment></shape></wire></page 0>
 <page 1>
-<PageViewport>-204.927,-68.5226,236.144,-290.64</PageViewport>
+<PageViewport>-139.611,2.09853,447.246,-293.435</PageViewport>
 <gate>
 <ID>33</ID>
 <type>AA_LABEL</type>
@@ -236,7 +240,7 @@
 <input>
 <ID>clock</ID>69 </input>
 <gparam>angle 0.0</gparam>
-<lparam>CURRENT_VALUE 1</lparam>
+<lparam>CURRENT_VALUE 0</lparam>
 <lparam>INPUT_BITS 1</lparam>
 <lparam>NO_HOLD true</lparam>
 <lparam>SYNC_CLEAR false</lparam>
@@ -394,7 +398,7 @@
 <input>
 <ID>clock</ID>69 </input>
 <gparam>angle 0.0</gparam>
-<lparam>CURRENT_VALUE 1</lparam>
+<lparam>CURRENT_VALUE 0</lparam>
 <lparam>INPUT_BITS 1</lparam>
 <lparam>NO_HOLD true</lparam>
 <lparam>SYNC_CLEAR false</lparam>
@@ -1561,16 +1565,11 @@
 <ID>1</ID>
 <points>29.5,-22.5,33.5,-22.5</points>
 <connection>
-<GID>37</GID>
-<name>OUT_0</name></connection>
-<intersection>33.5 4</intersection></hsegment>
-<vsegment>
-<ID>4</ID>
-<points>33.5,-22.5,33.5,-22.5</points>
-<connection>
 <GID>34</GID>
 <name>IN_1</name></connection>
-<intersection>-22.5 1</intersection></vsegment></shape></wire>
+<connection>
+<GID>37</GID>
+<name>OUT_0</name></connection></hsegment></shape></wire>
 <wire>
 <ID>17</ID>
 <shape>
@@ -2693,18 +2692,146 @@
 <name>clock</name></connection>
 <intersection>8.5 0</intersection></hsegment></shape></wire></page 1>
 <page 2>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 2>
+<PageViewport>-50.8003,59.2835,134.675,-34.1197</PageViewport>
+<gate>
+<ID>146</ID>
+<type>AA_TOGGLE</type>
+<position>29,23</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>147</ID>
+<type>AA_TOGGLE</type>
+<position>29,20</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>148</ID>
+<type>AA_TOGGLE</type>
+<position>29,17</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>149</ID>
+<type>AA_TOGGLE</type>
+<position>29,14</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>150</ID>
+<type>AA_TOGGLE</type>
+<position>29,11</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>151</ID>
+<type>AA_TOGGLE</type>
+<position>29,8</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>152</ID>
+<type>AA_TOGGLE</type>
+<position>29,5</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>153</ID>
+<type>AA_TOGGLE</type>
+<position>29,2</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>154</ID>
+<type>AA_TOGGLE</type>
+<position>29,-1</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>155</ID>
+<type>AA_TOGGLE</type>
+<position>29,-4</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>156</ID>
+<type>AA_TOGGLE</type>
+<position>29,-7</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>157</ID>
+<type>AA_TOGGLE</type>
+<position>29,-10</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>158</ID>
+<type>AA_TOGGLE</type>
+<position>29,-13</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>159</ID>
+<type>AA_TOGGLE</type>
+<position>29,-16</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>160</ID>
+<type>AA_TOGGLE</type>
+<position>29,-19</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate>
+<gate>
+<ID>161</ID>
+<type>AA_TOGGLE</type>
+<position>29,-22</position>
+<gparam>CLICK_BOX -0.76,-0.76,0.76,0.76</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>OUTPUT_BITS 1</lparam>
+<lparam>OUTPUT_NUM 0</lparam></gate></page 2>
 <page 3>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 3>
+<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 3>
 <page 4>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 4>
+<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 4>
 <page 5>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 5>
+<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 5>
 <page 6>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 6>
+<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 6>
 <page 7>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 7>
+<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 7>
 <page 8>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 8>
+<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 8>
 <page 9>
-<PageViewport>0,0,139.4,-70.2</PageViewport></page 9></circuit>
+<PageViewport>0,37.7538,439.646,-183.646</PageViewport></page 9></circuit>

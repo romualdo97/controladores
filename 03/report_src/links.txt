@@ -1,0 +1,8 @@
+Guias: 
+https://docs.google.com/presentation/d/1yC6q5-miDX-_kVNO2JR1-AVWGqEyC-Z54O6F01bJK-k/edit#slide=id.g23377867a5_0_45
+
+Presentacion:
+http://nand2tetris.org/lectures/PDF/lecture%2003%20sequential%20logic.pdf
+
+Time diagram editor:
+http://wavedrom.com
