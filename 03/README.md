@@ -158,7 +158,21 @@ El problema anterior puede ser resuelto en circuitos secuenciales en la etapa de
 ----------
 
 
-EXPLICACIÓN DE CHIPS
+DIAGRAMAS DE CHIPS
 ===================
 
 ## 1 bit register
+
+## 16 bit register
+
+## RAM8
+
+## RAM64
+
+## RAM512
+
+## RAM4K
+
+## RAM16K
+
+## PC
