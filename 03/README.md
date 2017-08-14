@@ -6,8 +6,9 @@
 > - Explica cada uno de los circuitos.
 > - Tiene el diagrama de compuertas de cada circuito.
 > - Explica el código de cada circuito
-> - Diligenció la [auto-evaluación](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/Autoevaluacion.xlsx)
-> - Reporta el [tiempo de dedicación](https://cdn.rawgit.com/romualdo97/controladores/7a9ff32a/01/report_src/project_report.pdf).
+> - Ofrece el código fuente en [una carpeta](https://cdn.rawgit.com/romualdo97/controladores/3437bb1e/03/report_src/code.7z)
+> - Diligenció la [auto-evaluación](https://cdn.rawgit.com/romualdo97/controladores/3437bb1e/03/report_src/Autoevaluacion.xlsx)
+> - Reporta el [tiempo de dedicación](https://cdn.rawgit.com/romualdo97/controladores/3437bb1e/03/report_src/time_report.pdf).
 
 LISTADO DE CONCEPTOS
 ===================
@@ -18,11 +19,11 @@ Se realiza una gráfica de señal de reloj usando la función digital.
 
 ![enter image description here](https://latex.codecogs.com/gif.latex?ceil%28sin%28x%29%29%29)
 
-**[FOTO: a_digital_function]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/aa_digital_function.png)
 
 ![enter image description here](https://latex.codecogs.com/gif.latex?sin%28x%29) **vs**  ![enter image description here](https://latex.codecogs.com/gif.latex?ceil%28sin%28x%29%29%29)
 
-**[FOTO: a_digital_function_and_sine_function]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/ab_digital_function_and_sine_function.png)
 
 Identificamos las fases ticks mediante la siguiente expresión.
 
@@ -34,7 +35,7 @@ Identificamos las fases tocks mediante la siguiente expresión.
 
 Así mismo, en la siguiente imagen podemos identificar los flancos de bajada en los tiempos ![enter image description here](https://latex.codecogs.com/gif.latex?%5Cpi,&space;3%5Cpi,&space;5%5Cpi), mientras que los flancos de subida se encuentran en los instantes ![enter image description here](https://latex.codecogs.com/gif.latex?0,&space;2%5Cpi,&space;4%5Cpi).
 
-**[FOTO: a_flancos_subida_y_bajada]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/ac_flancos_subida_y_bajada.png)
 
 Basado en la imagen anterior podemos calcular el tiempo que tarda el reloj en completar un ciclo tick tock, es decir el periodo de la función digital que describe los ciclos del reloj.
 
@@ -48,19 +49,19 @@ También podemos calcular el número de ciclos que completa el reloj por unidad 
 
 ### Flip-flop tipo D 
 
-**[FOTO: b_DFF_time_scheme]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/ba_DFF_time_scheme.png)
 
 ### 1 Bit register
 
-**[FOTO: b_bit_register_time_scheme]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/bb_bit_register_time_scheme.png)
 
 ### Registro
 
-**[FOTO: bc_register_time_scheme]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/bc_register_time_scheme.png)
 
 ### RAM8
 
-**[FOTO: bd_ram8_time_scheme]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/bd_ram8_time_scheme.png)
 
 **CICLO CERO:**
 La RAM8 carga el registro en la dirección ocho en modo escritura, con los bits 0 y 15 del bus de entrada igual a 1.
@@ -86,7 +87,7 @@ La ram retorna a través del bus de salida el contenido del registro cero en el 
 
 ## 1.C ) Explique los diagramas que se encuentran en slide 14 de [este archivo](http://nand2tetris.org/lectures/PDF/lecture%2003%20sequential%20logic.pdf): 
 
-**[FOTO: ca_diagram_14]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/ca_diagram_14.png)
 
 La figura de la izquierda nos muestra como la salida de un circuito combinacional depende de la forma en que combinemos las entradas del mismo, es decir, el circuito combinacional está en función de sus entradas. 
 
@@ -94,7 +95,7 @@ Mientras tanto un circuito secuencial se encuentra principalmente en función de
 
 ## 1.D ) ¿Cuáles son las diferencias fundamentales entre un circuito lógico secuencial y uno combinacional?
 
-**[FOTO: da_flip_flop]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/da_flip_flop.png)
 
 El circuito lógico combinacional está en función de sus entradas, y no puede nunca recibir como entrada alguna de sus salidas, pues se produciría un problema de indeterminación. Por otro lado el circuito lógico secuencial soluciona esta cuestión usando algún flip flop particular que permita al circuito estar en función del tiempo, de otras entradas cualquieras y de sus propias salidas en tiempos anteriores.
 
@@ -112,7 +113,7 @@ En otras palabras, no es correcto decir que las operaciones de escritura son sec
 
 En la siguiente imagen la operación de escribir un uno en el bit de salida `out` será cuestión solo de modificar la combinación de los bits de entrada, esto es, hacer que los bits `load` e `in` sean igual a uno, el resultado de este circuito combinacional es transmitido luego a un circuito secuencial, que en este caso se constituye solo de un `data flip-flop`. Así podemos observar como la operación de escribir se compone de un circuito combinacional y uno secuencial. Lo mismo ocurre cuando se intenta leer un bit.
 
-**[FOTO: ea_example]**
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/ea_example.png)
 
 ## 1.F ) Explique la diferencia entre una dirección de memoria y el contenido de esa dirección
 
@@ -163,16 +164,34 @@ DIAGRAMAS DE CHIPS
 
 ## 1 bit register
 
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/a_bit_register.png)
+
 ## 16 bit register
+
+  ![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/b_16_bit_register.png)
 
 ## RAM8
 
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/c_RAM8.png)
+
 ## RAM64
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/c_RAM64.png)
 
 ## RAM512
 
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/c_RAM512.png)
+
 ## RAM4K
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/d_RAM4K.png)
 
 ## RAM16K
 
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/e_RAM16K.png)
+
 ## PC
+
+![enter image description here](https://cdn.rawgit.com/romualdo97/controladores/5e43c871/03/report_src/imgs/chips/f_PC.png)
+
+
