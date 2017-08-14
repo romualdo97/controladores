@@ -6,3 +6,6 @@ http://nand2tetris.org/lectures/PDF/lecture%2003%20sequential%20logic.pdf
 
 Time diagram editor:
 http://wavedrom.com
+
+Diagram editor:
+https://www.draw.io/
