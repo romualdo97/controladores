@@ -25,6 +25,11 @@
  * than to the address resulting from executing the current instruction. 
  */
 
+ /*
+    POSIBLES ERRORES
+        Los bits de control de la ALU estan mal puestos
+ */
+
 CHIP CPU {
 
     IN  inM[16],         // M value input  (M = contents of RAM[A])
@@ -39,5 +44,114 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
+    // i 11 a1 c1c2c3c4c5c6 d1d2d3 j1j2j3
+
+    /*
+    ██████╗  █████╗ ████████╗ █████╗     ███╗   ███╗███████╗███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗    ██████╗ ███████╗██╗      █████╗ ████████╗███████╗██████╗ 
+    ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗    ████╗ ████║██╔════╝████╗ ████║██╔═══██╗██╔══██╗╚██╗ ██╔╝    ██╔══██╗██╔════╝██║     ██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+    ██║  ██║███████║   ██║   ███████║    ██╔████╔██║█████╗  ██╔████╔██║██║   ██║██████╔╝ ╚████╔╝     ██████╔╝█████╗  ██║     ███████║   ██║   █████╗  ██║  ██║
+    ██║  ██║██╔══██║   ██║   ██╔══██║    ██║╚██╔╝██║██╔══╝  ██║╚██╔╝██║██║   ██║██╔══██╗  ╚██╔╝      ██╔══██╗██╔══╝  ██║     ██╔══██║   ██║   ██╔══╝  ██║  ██║
+    ██████╔╝██║  ██║   ██║   ██║  ██║    ██║ ╚═╝ ██║███████╗██║ ╚═╝ ██║╚██████╔╝██║  ██║   ██║       ██║  ██║███████╗███████╗██║  ██║   ██║   ███████╗██████╔╝
+    ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝    ╚═╝     ╚═╝╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝                                                                                                                                                    
+    */
+
+    // FOR TYPE-A INSTRUCTION
+    // CPU should write in A register if this is a type-A instruction
+    // if i = 0
+    Not(in=instruction[15], out=no);
+    // FOR TYPE-C INSTRUCTION
+    // CPU should write in A register dest if ALU specefies that
+    // and if this is a type-C instruction
+    // if (d1 & i)
+    And(a=instruction[15], b=instruction[5], out=co);
+    // FOR TYPE-C,-A INSTRUCTION
+    // CPU should write in A register if (d1 & i) | !i
+    Or(a=no, b=co, out=writeA);
+
+    // FOR TYPE-C,-A INSTRUCTION
+    // check if the instruction is a type-C or -A one?
+    Mux16(a=instruction, b=ALUo, sel=instruction[15], out=cao);
+    // FOR TYPE-C,-A INSTRUCTION
+    ARegister(in=cao, load=writeA, out=Areg, out[0..14]=addressM);
+
+    // FOR TYPE-C INSTRUCTION
+    // should ALU compute using Memory[A] or A register?
+    And(a=instruction[15], b=instruction[12], out=r);
+    Mux16(a=Areg, b=inM, sel=r, out=MorA); // MorA = [M]emory or [A] register
+
+    DRegister(in=ALUo, load=writeD, out=Dreg);
+
+    ALU(x=Dreg, y=MorA, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=ALUo, out=outM, zr=zr, ng=ng);
+    //ALU(x=Dreg, y=MorA, zx=true, nx=true, zy=true, ny=true, f=true, no=true, out=ALUo, zr=zr, ng=ng);
+    //ALU(x=Dreg, y=MorA, zx=instruction[6], nx=instruction[7], zy=instruction[8], ny=instruction[9], f=instruction[10], no=instruction[11], out=ALUo, zr=zr, ng=ng);
+
+    // CPU should write in memory if d3 & i
+    And(a=instruction[3], b=instruction[15], out=writeM);
+    // CPU should write in D register if d2 & i
+    And(a=instruction[4], b=instruction[15], out=writeD);
+
+    /*
+    ██╗███╗   ██╗███████╗████████╗██████╗ ██╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗    ███╗   ███╗███████╗███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗    ██████╗ ███████╗██╗      █████╗ ████████╗███████╗██████╗ 
+    ██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║   ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║    ████╗ ████║██╔════╝████╗ ████║██╔═══██╗██╔══██╗╚██╗ ██╔╝    ██╔══██╗██╔════╝██║     ██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+    ██║██╔██╗ ██║███████╗   ██║   ██████╔╝██║   ██║██║        ██║   ██║██║   ██║██╔██╗ ██║    ██╔████╔██║█████╗  ██╔████╔██║██║   ██║██████╔╝ ╚████╔╝     ██████╔╝█████╗  ██║     ███████║   ██║   █████╗  ██║  ██║
+    ██║██║╚██╗██║╚════██║   ██║   ██╔══██╗██║   ██║██║        ██║   ██║██║   ██║██║╚██╗██║    ██║╚██╔╝██║██╔══╝  ██║╚██╔╝██║██║   ██║██╔══██╗  ╚██╔╝      ██╔══██╗██╔══╝  ██║     ██╔══██║   ██║   ██╔══╝  ██║  ██║
+    ██║██║ ╚████║███████║   ██║   ██║  ██║╚██████╔╝╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║    ██║ ╚═╝ ██║███████╗██║ ╚═╝ ██║╚██████╔╝██║  ██║   ██║       ██║  ██║███████╗███████╗██║  ██║   ██║   ███████╗██████╔╝
+    ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝     ╚═╝╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝                                                                                                                                                                                                             
+    */
+
+    // negate zr and ng
+    Not(in=zr, out=nzr);
+    Not(in=ng, out=nng);
+
+    // 0, a) NULL
+    // -> false
+    // 1, b) JGT | If out > 0 jump
+    And(a=nzr, b=nng, out=jgto);
+    And(a=jgto, b=instruction[15], out=JGT);
+    // 2, c) JEQ | If out = 0 jump
+    // -> zr
+    And(a=zr, b=instruction[15], out=JEQ);
+    // 3, d) JGE | If out >= 0 jump
+    // -> nng
+    And(a=nng, b=instruction[15], out=JGE);
+    // 4, e) JLT | If out < 0 jump
+    // -> ng
+    And(a=ng, b=instruction[15], out=JLT);
+    // 5, f) JNE | If out != 0 jump
+    // -> nzr
+    And(a=nzr, b=instruction[15], out=JNE);
+    // 7, g) JLE | If out <= 0 jump
+    And(a=ng, b=instruction[15], out=jleo);
+    Or(a=jleo, b=zr, out=JLE);
+    //And(a=ng, b=zr, out=jleo);
+    //And(a=jleo, b=instruction[15], out=JLE);
+    // 8, h) JUMP 
+    // -> true
+    And(a=true, b=instruction[15], out=JUMP);
+
+    // MUX8WAY
+
+    Xor(a=instruction[0], b=instruction[1], out=xorab);
+    Xor(a=xorab, b=instruction[2], out=xoro);
+
+    Mux(a=JGT, b=JEQ, sel=instruction[1], out=muxa);
+    Mux(a=JLT, b=JUMP, sel=instruction[0], out=muxb);
+    Mux(a=muxb, b=muxa, sel=xorab, out=muxabo);
+
+    Xor(a=instruction[1], b=instruction[2], out=xorcd);
+
+    Mux(a=JGE, b=JNE, sel=instruction[2], out=muxc);
+    Mux(a=false, b=JLE, sel=instruction[1], out=muxd);
+    Mux(a=muxd, b=muxc, sel=xorcd, out=muxcdo);
+
+    Mux(a=muxcdo, b=muxabo, sel=xoro, out=oo);
+
+    Or(a=instruction[0], b=instruction[1], out=aa);
+    Or(a=aa, b=instruction[2], out=aaa);
+    And(a=aaa, b=instruction[15], out=isJumpCond);
+
+    Mux(a=false, b=oo, sel=isJumpCond, out=canJUMP);
+
+    PC(in=Areg, load=canJUMP, inc=true, reset=reset, out[0..14]=pc);
+
 }
