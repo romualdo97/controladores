@@ -1,3 +1,6 @@
 Ascii text generator
 http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Data%20Memory%20related
-Unigs typo: Ansii Shadow
+Using typo: Ansii Shadow
+
+Guia
+https://docs.google.com/presentation/d/1O9_EJ2s13zGehn_oNVMfrr83i3vnfO2kjTSdEGv8j3U/edit#slide=id.p4
