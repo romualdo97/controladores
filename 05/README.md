@@ -51,6 +51,67 @@
 # 1.3) ¿Qué hace el programa?
 El programa le suma a `32767` un `1` y almacena el resultado en la dirección `0x0` de la memoria `RAM`.
 
+---
+
 #1.4) ¿El resultado del programa es el esperado? Explique la razón por la cual se presenta este resultado.
 
 En la memoria `RAM[0]`se almacena un `-32768` Sin embargo si es el valor esperado, pues `CPU Emulator` interpreta los números binarios como si se tratara de complemento a 2.
+
+---
+
+# 2.2) Considere que la implementación de la CPU tiene un error. 
+Dicho error ocurre al ejecutar la instrucción 0000 0011 0000 0110 que está almacenada en la posición de memoria 16. Luego de ejecutar la instrucción el programa continúa en la posición de memoria 32. Indique qué valores podrían tener los registros A, D y PC justo antes y justo después de ejecutar la instrucción.
+
+WHEN EXECUTING **ROM[15]**
+
+    A = 32
+    D = A = 32
+    PC = 15
+
+WHEN EXECUTING  **ROM[16]**
+
+    A = 774
+    D = 32
+    // inLoad = (where j1 will be replaced by j3 and viceversa)
+    // making JUMP COND = JGE (if out >= 0 then JUMP)
+    PC(in=outALU, load=inLoad) = 16
+
+WHEN EXECUTING **ROM[32]**
+
+    A = 774
+    D = 32
+    PC = 32
+
+---
+
+# 2.3) Implemente un circuito que genere el error anterior.
+
+Para ver la implementación completa, revisar el archivo `report_src/ALU-ERROR.hdl`.
+A continuación lo único que se hace es remplazar todas las coincidencias del bit de control `j1` por `j3`  y viceversa, así mismo se eliminó el checkeo de tipo de operación `i`.
+
+    // MUX8WAY
+
+    Xor(a=instruction[2], b=instruction[1], out=xorab);
+    Xor(a=xorab, b=instruction[0], out=xoro);
+
+    Mux(a=JGT, b=JEQ, sel=instruction[1], out=muxa);
+    Mux(a=JLT, b=JUMP, sel=instruction[2], out=muxb);
+    Mux(a=muxb, b=muxa, sel=xorab, out=muxabo);
+
+    Xor(a=instruction[1], b=instruction[0], out=xorcd);
+
+    Mux(a=JGE, b=JNE, sel=instruction[0], out=muxc);
+    Mux(a=false, b=JLE, sel=instruction[1], out=muxd);
+    Mux(a=muxd, b=muxc, sel=xorcd, out=muxcdo);
+
+    Mux(a=muxcdo, b=muxabo, sel=xoro, out=oo);
+
+    Or(a=instruction[2], b=instruction[1], out=aa);
+    Or(a=aa, b=instruction[0], out=aaa);
+    And(a=aaa, b=instruction[15], out=isJumpCond);
+
+    Mux(a=false, b=oo, sel=isJumpCond, out=canJUMP);
+
+    PC(in=ALUo, load=canJUMP, inc=true, reset=reset, out[0..14]=pc);
+
+
