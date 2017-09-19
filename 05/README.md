@@ -1,43 +1,44 @@
+TODO: PONER LAS DIAGRAMAS DE LA CPU Y LA CPU-S2
 
 # 1.1, 1.2)
 
-	TYPE-A INSTRUCTION
-	0111111111111111		@32767
-							A = 32767
+    TYPE-A INSTRUCTION
+    0111111111111111        @32767
+                            A = 32767
 
-	TYPE-C INSTRUCTION
-	111 0 110000 010 000	D = A
-							D = 32767
+    TYPE-C INSTRUCTION
+    111 0 110000 010 000    D = A
+                            D = 32767
 
-	TYPE-A INSTRUCTION
-	0000000000000001		@1
-							A = 1
+    TYPE-A INSTRUCTION
+    0000000000000001        @1
+                            A = 1
 
-	TYPE-C INSTRUCTION
-	111 0 000010 010 000	D = D + A
-							D = 32767 + 1
-							D = 32768
+    TYPE-C INSTRUCTION
+    111 0 000010 010 000    D = D + A
+                            D = 32767 + 1
+                            D = 32768
 
-	TYPE-A INSTRUCTION
-	0000000000000000		@0
-							A = 0
+    TYPE-A INSTRUCTION
+    0000000000000000        @0
+                            A = 0
 
-	TYPE-C INSTRUCTION
-	111 0 001100 001 000	M = D
-							M[0] = 32768
+    TYPE-C INSTRUCTION
+    111 0 001100 001 000    M = D
+                            M[0] = 32768
 
 ---
-	
-	// Solution name: AsmToC, file name: main.cpp
-	
-	#define MEM (*(volatile __int16*)0x0u)
-	
-	int main(void)
-	{
-		MEM = 32767 + 1;
-		return 0;
-	}
-	
+    
+    // Solution name: AsmToC, file name: main.cpp
+    
+    #define MEM (*(volatile __int16*)0x0u)
+    
+    int main(void)
+    {
+        MEM = 32767 + 1;
+        return 0;
+    }
+    
     /*
     tested with
     cl.exe -v -> 19.10.25019 for x86
@@ -56,6 +57,12 @@ El programa le suma a `32767` un `1` y almacena el resultado en la dirección `0
 #1.4) ¿El resultado del programa es el esperado? Explique la razón por la cual se presenta este resultado.
 
 En la memoria `RAM[0]`se almacena un `-32768` Sin embargo si es el valor esperado, pues `CPU Emulator` interpreta los números binarios como si se tratara de complemento a 2.
+
+---
+
+# 2.1) Complete el circuito del tal manera que pueda implementar el set de instrucciones del computador Hack visto en clase.
+
+A continuación una ilustración de la arquitectura implementada, las declaraciones `HDL` se encuentran en el directorio `report_src`.
 
 ---
 
@@ -114,4 +121,50 @@ A continuación lo único que se hace es remplazar todas las coincidencias del b
 
     PC(in=ALUo, load=canJUMP, inc=true, reset=reset, out[0..14]=pc);
 
+---
 
+# 3.1) Invente una nueva instrucción para el procesador.
+
+Se define la instrucción `swap` que se codificará de la siguiente manera.
+
+    i s n a n n n n n n n n n n n n
+
+Donde la `n` es cualquier valor (no relevante para la instrucción), mientras que `a` especifica si hacer `swap` entre el `registro D` y `M` o el `registro D` y el `registro A`
+
+---
+
+# 3.2) Describa en HDL y por medio de un diagrama el circuito que implemente dicha instrucción.
+
+El HDL de la `CPU` con instrucciones `tipo-S` se encontrará en la carpeta `report_src` con el nombre `CPU-S2.hdl..`
+
+# 3.3) Realice un programa ejemplo que ilustre el funcionamiento de la nueva instrucción
+El siguiente programa de prueba se encuentra también en el directorio `report_src` bajo el nombre de `CPU-S2.tst`
+
+    load CPU-S2.hdl,
+    output-file CPU-S2.out,
+    output-list time%S0.4.0 inM%D0.6.0 instruction%B0.16.0 reset%B2.1.2 outM%D1.6.0 writeM%B3.1.3 addressM%D0.5.0 pc%D0.5.0 DRegister[]%D1.6.1;
+    
+    
+    set instruction %B0011000000111001, // @12345
+    tick, output, tock, output;
+    
+    set instruction %B1110110000010000, // D=A
+    tick, output, tock, output;
+    
+    set instruction %B0101101110100000, // @23456
+    tick, output, tock, output;
+    
+    set instruction %B1010000000000000,
+    tick, output, tock, output;
+    
+    set instruction %B1010000000000000,
+    tick, output, tock, output;
+    
+    set reset 1;
+    tick, output, tock, output;
+    
+    set instruction %B0111111111111111, // @32767
+    set reset 0;
+    tick, output, tock, output;
+
+Es posible comprobar la compatibilidad de la mejora corriendo el `script` de prueba `CPU.tst`
