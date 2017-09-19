@@ -45,8 +45,8 @@ CHIP CPU-S2 {
 
     PARTS:
     // 0 v v v v  v  v  v  v  v  v  v  v  v  v  v  : TYPE-A
-    // i 1 1 a c1 c2 c3 c4 c5 c6 d1 d2 d3 j1 j2 j3 : TYPE-C
-    // i 0 n a n  n  n  n  n  n  n  n  n  n  n  n  : TYPE-S
+    // i 1 n a c1 c2 c3 c4 c5 c6 d1 d2 d3 j1 j2 j3 : TYPE-C
+    // i s n a n  n  n  n  n  n  n  n  n  n  n  n  : TYPE-S
     // n: significa que no es de importancia
     // v: que puede tomar cualquier valor
 

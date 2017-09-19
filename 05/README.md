@@ -1,5 +1,3 @@
-TODO: PONER LAS DIAGRAMAS DE LA CPU Y LA CPU-S2
-
 # 1.1, 1.2)
 
     TYPE-A INSTRUCTION
@@ -63,6 +61,12 @@ En la memoria `RAM[0]`se almacena un `-32768` Sin embargo si es el valor esperad
 # 2.1) Complete el circuito del tal manera que pueda implementar el set de instrucciones del computador Hack visto en clase.
 
 A continuación una ilustración de la arquitectura implementada, las declaraciones `HDL` se encuentran en el directorio `report_src`.
+
+![enter image description here](https://i.imgur.com/pdn6Dru.jpg)
+
+**Program counter algorithm.**
+
+![enter image description here](https://i.imgur.com/QauZtZY.jpg)
 
 ---
 
@@ -135,7 +139,9 @@ Donde la `n` es cualquier valor (no relevante para la instrucción), mientras qu
 
 # 3.2) Describa en HDL y por medio de un diagrama el circuito que implemente dicha instrucción.
 
-El HDL de la `CPU` con instrucciones `tipo-S` se encontrará en la carpeta `report_src` con el nombre `CPU-S2.hdl..`
+El HDL de la `CPU` con instrucciones `tipo-S` se encontrará en la carpeta `report_src` con el nombre `CPU-S2.hdl`.
+
+![enter image description here](https://i.imgur.com/RNVkFcZ.jpg)
 
 # 3.3) Realice un programa ejemplo que ilustre el funcionamiento de la nueva instrucción
 El siguiente programa de prueba se encuentra también en el directorio `report_src` bajo el nombre de `CPU-S2.tst`
