@@ -1,20 +1,20 @@
 # RAssembler notes
 
-La `R` de `RAssembler` significa `RomualdoAssembler` y es una versión de ensamblador para hack machines escrito en c++.
-Este ensamblador expone su `API` de la forma propuesta en el libro `nand2tetris/chapter 06` pero ademas incorpora un `modulo` adicional para realizar validaciones de código `assembly` usando expresiones regulares, el modulo se ha decidido nombrar `RegexUtilities`. A continuación se dará una explicación general de la aplicación.
+La `R` de `RAssembler` significa `RomualdoAssembler` y es una versiÃ³n de ensamblador para hack machines escrito en c++.
+Este ensamblador expone su `API` de la forma propuesta en el libro `nand2tetris/chapter 06` pero ademas incorpora un `modulo` adicional para realizar validaciones de cÃ³digo `assembly` usando expresiones regulares, el modulo se ha decidido nombrar `RegexUtilities`. A continuaciÃ³n se darÃ¡ una explicaciÃ³n general de la aplicaciÃ³n.
 
 ### **RAssembler.exe** myAsmProgram
 
-Las archivos que genera `RAssembler` tienen el mismo nombre que el programa ensamblador de entrada pero con una extensión`.hack` ademas **no se debe escribir la extensión del archivo assembly en el argumento de entrada** dado que la aplicación supone internamente un archivo de extensión `.asm` como entrada.
-La aplicación en general consta de dos partes, una primera que busca símbolos definidos por el usuario y los almacena en una tabla de símbolos y una segunda encargada de resolver dichos símbolos. 
-Ademas la aplicación puede devolver el binario en dos formatos dependiendo de la variable de pre-compilacion `DEBUG_OUTPUT` declarada en el inicio del punto de entrada de la aplicación.
+Las archivos que genera `RAssembler` tienen el mismo nombre que el programa ensamblador de entrada pero con una extensiÃ³n`.hack` ademas **no se debe escribir la extensiÃ³n del archivo assembly en el argumento de entrada** dado que la aplicaciÃ³n supone internamente un archivo de extensiÃ³n `.asm` como entrada.
+La aplicaciÃ³n en general consta de dos partes, una primera que busca sÃ­mbolos definidos por el usuario y los almacena en una tabla de sÃ­mbolos y una segunda encargada de resolver dichos sÃ­mbolos. 
+Ademas la aplicaciÃ³n puede devolver el binario en dos formatos dependiendo de la variable de pre-compilacion `DEBUG_OUTPUT` declarada en el inicio del punto de entrada de la aplicaciÃ³n.
 
 
 ### **RAssembler.exe** in debug mode
 
-Cuando la constante `DEBUG_OUTPUT` esta presente en el proceso de compilación el programa genera tres archivos, uno de ellos siendo oculto para el sistema operativo, razón por la cual no es visible sin la configuración adecuada. 
-El primer archivo es el programa ensamblado, el segundo archivo con sufijo `_Debug` es el programa ensamblado con comentarios adicionales, **este programa no es apto para usarse en una hack machine** pero si es una excelente herramienta de detección de errores.
-La función del archivo oculto es almacenar el programa de entrada formateado, de tal forma que no contenga ni espacios, ni comentarios ni operaciones no definidas en las `hack machines`. El archivo oculto es el punto de entrada de la segunda parte del ensamblador `RAssembler` encargado de traducir comandos validos del set de instrucciones de las `hack machines` a código binario *(Aunque el archivo de salido esta en representación ASCII)*
+Cuando la constante `DEBUG_OUTPUT` esta presente en el proceso de compilaciÃ³n el programa genera tres archivos, uno de ellos siendo oculto para el sistema operativo, razÃ³n por la cual no es visible sin la configuraciÃ³n adecuada. 
+El primer archivo es el programa ensamblado, el segundo archivo con sufijo `_Debug` es el programa ensamblado con comentarios adicionales, **este programa no es apto para usarse en una hack machine** pero si es una excelente herramienta de detecciÃ³n de errores.
+La funciÃ³n del archivo oculto es almacenar el programa de entrada formateado, de tal forma que no contenga ni espacios, ni comentarios ni operaciones no definidas en las `hack machines`. El archivo oculto es el punto de entrada de la segunda parte del ensamblador `RAssembler` encargado de traducir comandos validos del set de instrucciones de las `hack machines` a cÃ³digo binario *(Aunque el archivo de salido esta en representaciÃ³n ASCII)*
 
 **Ejemplo de ensamblado**
 
@@ -38,29 +38,29 @@ La función del archivo oculto es almacenar el programa de entrada formateado, de
 
     SEEKING SYMBOLS:
 
-		0 		(IFCOND) => creating label 'IFCOND' for rom[0]
-		0 		@IFCOND
-		1 		A|D
-		2 		@32767
-		3 		@0
-		4 		@1
-		5 		@sdfsdf => creating label 'sdfsdf' for memory[16]
-		6 		(Labl) => creating label 'Labl' for rom[6]
-		6 		AM=D+A;JMP
-		7 		AMD=D+A;JEQ
-		8 		-D;JMP
-		9 		@$_:$.123 => creating label '$_:$.123' for memory[17]
-		10 		@a => creating label 'a' for memory[18]
-		11 		@12354
-		12 		(Symbol) => creating label 'Symbol' for rom[12]
-		12 		D|A
-		13 		($_:LABEL.) => creating label '$_:LABEL.' for rom[13]
-		13 		!A
-		14 		(LABEL) => creating label 'LABEL' for rom[14]
-		14 		A=0;JLE
-		15 		D=-D;JEQ
+	0 		(IFCOND) => creating label 'IFCOND' for rom[0]
+	0 		@IFCOND
+	1 		A|D
+	2 		@32767
+	3 		@0
+	4 		@1
+	5 		@sdfsdf => creating label 'sdfsdf' for memory[16]
+	6 		(Labl) => creating label 'Labl' for rom[6]
+	6 		AM=D+A;JMP
+	7 		AMD=D+A;JEQ
+	8 		-D;JMP
+	9 		@$_:$.123 => creating label '$_:$.123' for memory[17]
+	10 		@a => creating label 'a' for memory[18]
+	11 		@12354
+	12 		(Symbol) => creating label 'Symbol' for rom[12]
+	12 		D|A
+	13 		($_:LABEL.) => creating label '$_:LABEL.' for rom[13]
+	13 		!A
+	14 		(LABEL) => creating label 'LABEL' for rom[14]
+	14 		A=0;JLE
+	15 		D=-D;JEQ
 
-	TRANSLATING ASSEMBLY:
+    TRANSLATING ASSEMBLY:
 
 	0 		0 000000000000000 => @IFCOND (symbolic A_COMMAND; replaced by @0)
 	1 		111 0101010 000 000 => A|D (C_COMMAND)
@@ -81,4 +81,4 @@ La función del archivo oculto es almacenar el programa de entrada formateado, de
 
 ### **RAssembler.exe** in release mode
 
-`RAssembler` en **release mode** solo devuelve un archivo de salida que es el programa `assembly` original ensamblado, ademas `RAssembler` al finalizar la ejecución borra el archivo oculto que almacena el programa original formateado.
+`RAssembler` en **release mode** solo devuelve un archivo de salida que es el programa `assembly` original ensamblado, ademas `RAssembler` al finalizar la ejecuciÃ³n borra el archivo oculto que almacena el programa original formateado.
