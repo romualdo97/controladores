@@ -81,4 +81,4 @@ La función del archivo oculto es almacenar el programa de entrada formateado, d
 
 ### **RAssembler.exe** in release mode
 
-`RAssembler` en **release mode** solo devuelve un archivo de salida que es el programa `assembly` original ensamblado, ademas `RAssembler` al finalizar la ejecución borra el archivo oculto que almacena el programa original formateado.
+`RAssembler` en **release mode** solo devuelve un archivo de salida que es el programa `assembly` original ensamblado, ademas `RAssembler` al finalizar la ejecución borra el archivo oculto que almacena el programa 'assembly' original formateado.
