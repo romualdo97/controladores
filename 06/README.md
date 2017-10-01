@@ -1,3 +1,11 @@
+
+> ### **PROJECT 06 |** RASSEMBLER
+> Se garantiza qué este proyecto
+>
+> - Cumple el código de honor.
+> - Reporta el [tiempo de dedicación](https://github.com/romualdo97/controladores/blob/master/06/report_src/time_report.pdf).
+
+
 # RAssembler notes
 
 La `R` de `RAssembler` significa `RomualdoAssembler` y es una versión de ensamblador para hack machines escrito en c++.
